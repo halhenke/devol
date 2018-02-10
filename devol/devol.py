@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from genome_handler import GenomeHandler
+from .genome_handler import GenomeHandler
 import numpy as np
 from keras.models import Sequential
 from keras.utils import np_utils
@@ -88,7 +88,7 @@ class DEvol:
         print("Generation {3}:\t\tbest {4}: {0:0.4f}\t\taverage: {1:0.4f}\t\tstd: {2:0.4f}"\
                 .format(self.metric_objective(fit), np.mean(fit), np.std(fit), 1, self.metric))
 
-        # Evolve over 
+        # Evolve over
         for gen in range(1, num_generations):
             members = []
             for i in range(int(pop_size * 0.95)):  # Crossover
